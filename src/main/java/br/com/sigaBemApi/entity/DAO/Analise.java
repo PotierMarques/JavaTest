@@ -1,7 +1,6 @@
 package br.com.sigaBemApi.entity.DAO;
 
-import br.com.sigaBemApi.DTO.Response.AnaliseResponse;
-import org.springframework.lang.NonNull;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,21 +13,16 @@ public class Analise {
 
 //    ATTRIBUTES
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private Long Id;
 
-    @NotBlank
-    @Column(length = 55)
     private String nomeDestinatario;
 
-    @NotBlank
     private String cepOrigem;
 
-    @NotBlank
     private String cepDestino;
 
-    @NonNull
     private Double peso;
 
     private Double vlTotalFrete;
@@ -39,10 +33,9 @@ public class Analise {
 
 //CONSTRUCTORS
 
-    public Analise() {
-    }
+    public Analise() {}
 
-    public Analise(long id, String nomeDestinatario, String cepOrigem, String cepDestino, Double peso, Double vlTotalFrete, LocalDate dataPrevistaEntrega, LocalDate dataConsulta) {
+    public Analise(Long id, String nomeDestinatario, String cepOrigem, String cepDestino, Double peso, Double vlTotalFrete, LocalDate dataPrevistaEntrega, LocalDate dataConsulta) {
         Id = id;
         this.nomeDestinatario = nomeDestinatario;
         this.cepOrigem = cepOrigem;
@@ -53,16 +46,13 @@ public class Analise {
         this.dataConsulta = dataConsulta;
     }
 
-//GETTER'S AND SETTER'S
+    //GETTER'S AND SETTER'S
 
-    public Analise(Analise analise) {
-    }
-
-    public long getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         Id = id;
     }
 
@@ -102,12 +92,12 @@ public class Analise {
         return vlTotalFrete;
     }
 
-    public LocalDate getDataPrevistaEntrega() {
-        return dataPrevistaEntrega;
-    }
-
     public void setVlTotalFrete(Double vlTotalFrete) {
         this.vlTotalFrete = vlTotalFrete;
+    }
+
+    public LocalDate getDataPrevistaEntrega() {
+        return dataPrevistaEntrega;
     }
 
     public void setDataPrevistaEntrega(LocalDate dataPrevistaEntrega) {
@@ -118,9 +108,10 @@ public class Analise {
         return dataConsulta;
     }
 
-    public void setDataConsulta(LocalDate dataConsulta){
+    public void setDataConsulta(LocalDate dataConsulta) {
         this.dataConsulta = dataConsulta;
     }
+
 
 //METODOS
 
@@ -131,11 +122,8 @@ public class Analise {
         Analise that = (Analise) o;
         return Id == that.Id;
     }
-
     @Override
-    public int hashCode() {
-        return Objects.hash(Id);
-    }
+    public int hashCode() {return Objects.hash(Id);}
 
     @Override
     public String toString() {
@@ -144,9 +132,5 @@ public class Analise {
                 ", vlTotalFrete=" + vlTotalFrete +
                 ", dataPrevistaEntrega=" + dataPrevistaEntrega +
                 '}';
-    }
-
-//EDITAR
-    public void setPeso(Long peso) {
     }
 }
