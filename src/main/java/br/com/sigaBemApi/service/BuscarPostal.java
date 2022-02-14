@@ -12,6 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class BuscarPostal {
 
     public Postal buscarPostal(String cep) {
+
         RestTemplate rt = new RestTemplate();
 
         UriComponents uri = UriComponentsBuilder.newInstance()
@@ -21,12 +22,10 @@ public class BuscarPostal {
                 .build();
 
         ResponseEntity<Postal> response = rt.getForEntity(uri.toString(), Postal.class);
-//        System.out.println(response.getBody().getCep());
 
         if (response.getBody().getCep() == null) {
             throw new PostalNotFound("postal: "+cep);
         }
         return response.getBody();
     }
-
 }

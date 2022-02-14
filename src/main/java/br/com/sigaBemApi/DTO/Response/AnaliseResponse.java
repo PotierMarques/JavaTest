@@ -7,8 +7,8 @@ import java.time.LocalDate;
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class AnaliseResponse {
     /*
-                        ATTRIBUTES
-     */
+                       ATTRIBUTES
+    */
     private Long id;
     private String cepOrigem;
     private String cepDestino;
@@ -19,7 +19,8 @@ public class AnaliseResponse {
     /*
                         CONSTRUCTORS
      */
-    public AnaliseResponse(String id, Long peso, String cepOrigem, String cepDestino, LocalDate dataPrevistaEntrega, Double vlTotalFrete) {
+    public AnaliseResponse(String id, Long peso, String cepOrigem, String cepDestino,
+                           LocalDate dataPrevistaEntrega, Double vlTotalFrete) {
         this.id = Long.valueOf(id);
         this.cepOrigem = cepOrigem;
         this.cepDestino = cepDestino;
@@ -28,7 +29,7 @@ public class AnaliseResponse {
         this.peso = peso;
         this.nomeDestinatario = nomeDestinatario;
     }
-//EDITAR
+    //EDITAR
     public AnaliseResponse() {
 
     }
@@ -75,3 +76,4 @@ public class AnaliseResponse {
         this.nomeDestinatario = nomeDestinatario;
     }
 }
+

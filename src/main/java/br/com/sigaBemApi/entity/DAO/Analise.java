@@ -1,9 +1,6 @@
 package br.com.sigaBemApi.entity.DAO;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -35,7 +32,9 @@ public class Analise {
 
     public Analise() {}
 
-    public Analise(Long id, String nomeDestinatario, String cepOrigem, String cepDestino, Double peso, Double vlTotalFrete, LocalDate dataPrevistaEntrega, LocalDate dataConsulta) {
+    public Analise(Long id, String nomeDestinatario, String cepOrigem,
+                   String cepDestino, Double peso, Double vlTotalFrete,
+                   LocalDate dataPrevistaEntrega, LocalDate dataConsulta) {
         Id = id;
         this.nomeDestinatario = nomeDestinatario;
         this.cepOrigem = cepOrigem;

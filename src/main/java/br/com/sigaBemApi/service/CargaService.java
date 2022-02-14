@@ -32,11 +32,12 @@ public class CargaService {
 
         Analise saved = this.repository.save(analise);
 
+
         return saved;
     }
 
     private Double CalcularDesconto(Postal cepOrigem, Postal cepDestino) {
-        if (Objects.equal(cepOrigem.getUf(), cepDestino.getUf())) {
+        if (Objects.equal(cepOrigem.getDdd(), cepDestino.getDdd())) {
 
             return 0.25;
         }
@@ -48,7 +49,7 @@ public class CargaService {
     }
 
     private Long calcularPrazoEntrega(Postal cepOrigem, Postal cepDestino) {
-        if (Objects.equal(cepOrigem.getUf(), cepDestino.getUf())) {
+        if (Objects.equal(cepOrigem.getDdd(), cepDestino.getDdd())) {
             return 1L;
         }
         if (Objects.equal(cepOrigem.getUf(), cepDestino.getUf())) {
